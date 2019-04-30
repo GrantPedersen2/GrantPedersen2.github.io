@@ -1,4 +1,4 @@
-##Preparing the environment:
+## Preparing the environment:
 
 1.) Download the source <a>here</a>
   
@@ -7,7 +7,7 @@
 3.) Note make sure you have access to su or sudo on your machine
 some executions may need root privileges.
 
-##Execute Spectre:
+## Execute Spectre:
 First run the command below this important for step 2
 1.) run command: <b>build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre</b>
 
@@ -39,4 +39,4 @@ run command:
 Once this is completed we will now use this command to see our pipeline:
 <b> less -r o3-pipeview.out </b>
 
-##Execute Meltdown:
+## Execute Meltdown:
