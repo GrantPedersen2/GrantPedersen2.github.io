@@ -4,7 +4,7 @@ Name: Grant Pedersen
 Email: grant.pedersen@ucdenver.edu  
 
 ## Project Implementation
-<a href='ProjectImplementation/'>Project Folder</a>
+<a href='ProjectImplementation/index'>Project Folder</a>
 
 ## Literature Report
 <a href='LiteratureReview/ReviewOnePedersen.docx'>Report 1</a>
