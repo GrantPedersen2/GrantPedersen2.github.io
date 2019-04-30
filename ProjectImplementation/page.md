@@ -1,4 +1,4 @@
-##Preparing the environment:
+## Preparing the environment:
 
 1.) Download the source here
 
@@ -6,7 +6,10 @@
 
 3.) Note make sure you have access to su or sudo on your machine some executions may need root privileges.
 
-##Execute Spectre: First run the command below this important for step 2 1.) run command: build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre
+## Execute Spectre: 
+
+First run the command below this important for step 2 
+1.) run command: build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre
 
 For normal spectre execution. After the first 2 or 5 letters that pop on screen, use ctrl+c to stop the process. Once the process stops notice at the bottom it should state the following: Exiting @ tick 113568969000 because exiting with last active thread context Notice 113568969000 is an example it could be different tick, but we will use this in our example
 
@@ -26,4 +29,4 @@ run command: util/o3-pipeview.py --store_completions m5out/pipeview.txt --color 
 
 Once this is completed we will now use this command to see our pipeline: less -r o3-pipeview.out
 
-##Execute Meltdown:
+## Execute Meltdown:
