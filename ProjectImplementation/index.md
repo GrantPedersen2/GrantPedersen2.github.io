@@ -41,7 +41,7 @@ Download <a href=''>here</a>
 ### Step 2.) Use WinSCP To Upload The Source File To Your Directory When Logged On To Hydra ###
   
 ### Step 3.) Unzip The Tar ###
-* tar -zxvf project_implementation.tar.gz
+* tar -xJf project_implementation.tar.xz
   
 ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits ###
 
