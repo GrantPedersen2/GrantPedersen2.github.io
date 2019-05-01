@@ -53,6 +53,7 @@ Download <a href=''>here</a>
  
 * Extract the tar file:  `tar -zxvf project_implementation.tar.gz`
   
+* * *
 
 ## Method 2.) Using Hydra Environment: ##
 
@@ -68,6 +69,8 @@ Download <a href=''>here</a>
   
   
 ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How To Execute Both Exploits ###
+
+* * *
 
 <a name='spectre'>
 
@@ -108,6 +111,8 @@ Before running the command, make sure to stop at the first 2 or 3 letters the fi
 
 Once this is completed we will now use this command to see our pipeline: 
 * `less -r o3-pipeview.out`
+
+* * *
 
 <a name='meltdown'/>
 
