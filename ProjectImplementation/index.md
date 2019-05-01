@@ -1,13 +1,17 @@
 # Preparing Environment: #
 ## Method 1.) Downloading and Using VM Box (latest version optional): ##
 
+<h2 color ='red'>Note make sure you have access to su or sudo on your machine some executions may need root privileges.</h2>
+
 ### Step 1.) Downloading Ubuntu 16.04.1 LTS (Xenial Xerus) Disk Image ###
   
 * Download <a href='http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso'>Here</a>
 
+
 ### Step 2.) Setup VM Box and Mount/Install the Ubuntu Disk And Start VM ###
 
 * Additional Resource To Help Install: <a href='https://itsfoss.com/install-linux-in-virtualbox/'>Here</a>
+  
   
 ### Step 3.) Open Terminal and Enter The Commands Below: ###
   
@@ -26,24 +30,29 @@
  
  <h4 color ='red'>If you have any trouble running or executing the gem5 look here for troubleshooting the libraries you may need to look <a href='http://learning.gem5.org/book/part1/building.html#requirements-for-gem5'>here</a></h4>
  
+ 
 ### Step 4.) Download the source/implementation tar file ###
  
 Download <a href=''>here</a>
  
 * Extract the tar file:  tar -zxvf project_implementation.tar.gz
   
-<h2 color ='red'>Note make sure you have access to su or sudo on your machine some executions may need root privileges.</h2>
 
 ## Method 2.) Using Hydra Environment: ##
 
+
 ### Step 1.) Log On to Hydra ###
   
+  
 ### Step 2.) Use WinSCP To Upload The Source File To Your Directory When Logged On To Hydra ###
+  
   
 ### Step 3.) Unzip The Tar ###
 * tar -xJf project_implementation.tar.xz
   
+  
 ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits ###
+
 
 ## Executing Spectre: ##
 
