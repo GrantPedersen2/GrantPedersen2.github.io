@@ -18,8 +18,8 @@ layout: default
   
   
 ### Step 3.) Open Terminal and Enter The Commands Below: ###
-  
-     ```
+
+```
      sudo apt-get install build-essential
      
      sudo apt-get install scons
@@ -29,7 +29,7 @@ layout: default
      sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
      
      sudo apt-get install automake
-     ```
+```
      
   You can also try this method too:
   * `sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python`
@@ -50,17 +50,17 @@ Download <a href=''>here</a>
 ### Step 1.) Log On to Hydra ###
   
   
-### Step 2.) Use WinSCP To Upload The Source File To Your Directory When Logged On To Hydra ###
+### Step 2.) Use `WinSCP` To Upload The Source File To Your Directory When Logged On To Hydra ###
   
   
-### Step 3.) Unzip The Tar ###
+### Step 3.) Extract The Tar ###
 * `tar -xJf project_implementation.tar.xz`
   
   
-### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits ###
+### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How To Execute Both Exploits ###
 
 
-## Executing Spectre: ##
+# Executing Spectre:
 
 ### First run the command below this is important for step 2!! ###
 
@@ -83,9 +83,9 @@ Notice 113568969000 is an example it could be different tick, but we will use th
 
 Before running the command, make sure to stop at the first 2 or 3 letters the file can grow very fast be careful with this debugger.
 
-* run command: -build/X86/gem5.opt --debug-flags=O3PipeView --debug-file=pipeview.txt --debug-start=13062347000 configs/learning_gem5/part1/two_level.py spectre
+* run command: `-build/X86/gem5.opt --debug-flags=O3PipeView --debug-file=pipeview.txt --debug-start=13062347000 configs/learning_gem5/part1/two_level.py spectre`
 
-* Then use CTRL + C to stop after the first 2 or 3 letters
+* Then use `CTRL + C` to stop after the first 2 or 3 letters
 
 3.) 
 > Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using > a utility provided by gem5 to "beautify" the text for us.
@@ -98,4 +98,20 @@ Before running the command, make sure to stop at the first 2 or 3 letters the fi
 Once this is completed we will now use this command to see our pipeline: 
 * `less -r o3-pipeview.out`
 
-## Executing Meltdown: ##
+# Executing Meltdown:
+
+1.)
+We need to startup our Bare Metal VM to run our 64 bit vanilla kernel and OS using this command here:
+
+* `build/X86/gem5.opt configs/example/fs.py --kernel ~/gem5/x86-system/binaries/x86_64-vmlinux-2.6.22.9.smp --disk-image ~/gem5/x86-system/disks/linux-x86.img`
+
+Should look something like this below:
+![Results](https://github.com/GrantPedersen2/GrantPedersen2.github.io/blob/master/ProjectImplementation/Result.PNG)
+
+2.) 
+Now that our VM is running we need to attach a built-in simulated terminal to attach to a TCP port `localhost 3456`
+Use the command here:
+* `gem5/util/term/m5term localhost 3456`
+
+Should look something like this below:
+![Results2](https://github.com/GrantPedersen2/GrantPedersen2.github.io/blob/master/ProjectImplementation/Result2.PNG)
