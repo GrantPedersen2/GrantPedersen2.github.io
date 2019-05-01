@@ -1,25 +1,25 @@
 # Preparing Environment:
-## Method 1.) Downloading and Using VM Box (latest version optional):
+## Method 1.) Downloading and Using VM Box (latest version optional): ##
 
-  ### Step 1.) Downloading Ubuntu 16.04.1 LTS (Xenial Xerus) Disk Image ###
+### Step 1.) Downloading Ubuntu 16.04.1 LTS (Xenial Xerus) Disk Image ###
   
-  <b><li> Download <a href='http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso'>Here</a></li></b>
+<b><li>Download <a href='http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso'>Here</a></li></b>
   
-  ### Step 2.) Setup VM Box and Mount/Install the Ubuntu Disk And Start VM ###
+### Step 2.) Setup VM Box and Mount/Install the Ubuntu Disk And Start VM ###
   
-  <b><li>Additional Resource To Help Install:<a href='https://itsfoss.com/install-linux-in-virtualbox/'> Here</a></li></b>
+<b><li>Additional Resource To Help Install:<a href='https://itsfoss.com/install-linux-in-virtualbox/'> Here</a></li></b>
   
-  ### Step 3.) Open Terminal and Enter The Commands Below: ###
+### Step 3.) Open Terminal and Enter The Commands Below: ###
   
-     * sudo apt-get install build-essential
+     sudo apt-get install build-essential
      
-     * sudo apt-get install scons
+     sudo apt-get install scons
      
-     * sudo apt-get install python-dev
+     sudo apt-get install python-dev
      
-     * sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
+     sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
      
-     * sudo apt-get install automake
+     sudo apt-get install automake
      
   You can also try this method too:
   * sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
@@ -30,19 +30,20 @@
  ### Step 4.) Download the source/implementation tar file ###
  
  Download <a href=''>here</a>
+ 
  <b><li>Extract the tar file:  tar -zxvf project_implementation.tar.gz</li></b>
   
  <h4 color ='red'>Note make sure you have access to su or sudo on your machine some executions may need root privileges.</h4>
 
-## Method 2.) Using Hydra Environment:
+## Method 2.) Using Hydra Environment: ##
 
-  ### Step 1.) Log On to Hydra ###
+### Step 1.) Log On to Hydra ###
   
-  ### Step 2.) Use WinSCP To Upload The Source File To Your Directory When Logged On To Hydra ###
+### Step 2.) Use WinSCP To Upload The Source File To Your Directory When Logged On To Hydra ###
   
-  ### Step 3.) Use tar -zxvf project_implementation.tar.gz ###
+### Step 3.) Use tar -zxvf project_implementation.tar.gz ###
   
-  ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits ###
+### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits ###
 
 ## Executing Spectre: ##
 
@@ -71,12 +72,15 @@ run command: <b>-build/X86/gem5.opt --debug-flags=O3PipeView --debug-file=pipevi
 
 Then use CTRL + C to stop after the first 2 or 3 letters</b>
 
-3.) <h4 color ='red'>Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using a utility provided by gem5 to "beautify" the text for us.
+3.) 
+<h4 color ='red'>Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using a utility provided by gem5 to "beautify" the text for us.
 
-We will color code the states in our pipeline using ASCII text</h4>
+We will color code the states in our pipeline using ASCII text
+</h4>
 
-<b>run command: util/o3-pipeview.py --store_completions m5out/pipeview.txt --color -w 150</b>
+* run command: util/o3-pipeview.py --store_completions m5out/pipeview.txt --color -w 150
 
-Once this is completed we will now use this command to see our pipeline: <b>less -r o3-pipeview.out</b>
+Once this is completed we will now use this command to see our pipeline: 
+* less -r o3-pipeview.out
 
 ### Executing Meltdown: ###
