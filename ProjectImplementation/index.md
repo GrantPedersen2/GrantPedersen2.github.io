@@ -73,7 +73,7 @@ Download <a href=''>here</a>
 
 # Executing Spectre:
 
-### First run the command below this is important for step 2!! ###
+### Run this command below first, this is important for step 2!! ###
 
 1.) 
 
