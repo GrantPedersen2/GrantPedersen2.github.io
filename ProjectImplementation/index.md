@@ -70,6 +70,7 @@ WARNING: This will run slow and will write a file to the current path you execut
 </h3>
 
 2.) 
+
 Before running the command, make sure to stop at the first 2 or 3 letters the file can grow very fast be careful with this debugger.
 
 * run command: -build/X86/gem5.opt --debug-flags=O3PipeView --debug-file=pipeview.txt --debug-start=13062347000 configs/learning_gem5/part1/two_level.py spectre
