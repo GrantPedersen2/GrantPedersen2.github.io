@@ -106,7 +106,7 @@ We need to startup our Bare Metal VM to run our 64 bit vanilla kernel and OS usi
 * `build/X86/gem5.opt configs/example/fs.py --kernel ~/gem5/x86-system/binaries/x86_64-vmlinux-2.6.22.9.smp --disk-image ~/gem5/x86-system/disks/linux-x86.img`
 
 Should look something like this below:
-![Results](https://github.com/GrantPedersen2/GrantPedersen2.github.io/blob/master/ProjectImplementation/Result.PNG)
+![Results](https://raw.githubusercontent.com/GrantPedersen2/GrantPedersen2.github.io/master/ProjectImplementation/Result.PNG)
 
 2.) 
 Now that our VM is running we need to attach a built-in simulated terminal to attach to a TCP port `localhost 3456`
@@ -114,4 +114,4 @@ Use the command here:
 * `gem5/util/term/m5term localhost 3456`
 
 Should look something like this below:
-![Results2](https://github.com/GrantPedersen2/GrantPedersen2.github.io/blob/master/ProjectImplementation/Result2.PNG)
+![Results2](https://raw.githubusercontent.com/GrantPedersen2/GrantPedersen2.github.io/master/ProjectImplementation/Result2.PNG)
