@@ -4,6 +4,10 @@ layout: default
 # Table Of Contents
 * * *
 [Preparing Environment](#prep)
+
+[Spectre Execution](#spectre)
+
+[Meltdown Execution](#meltdown)
 * * *
 
 <a name="prep"/>
@@ -65,6 +69,7 @@ Download <a href=''>here</a>
   
 ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How To Execute Both Exploits ###
 
+<a name='spectre'>
 
 # Executing Spectre:
 
@@ -103,6 +108,8 @@ Before running the command, make sure to stop at the first 2 or 3 letters the fi
 
 Once this is completed we will now use this command to see our pipeline: 
 * `less -r o3-pipeview.out`
+
+<a name='meltdown'/>
 
 # Executing Meltdown:
 
