@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
+# Table Of Contents
+* * *
+[Preparing Environment](#prep)
+* * *
+
+<a name="prep"/>
 
 # Preparing Environment: #
 ## Method 1.) Downloading and Using VM Box (latest version optional): ##
