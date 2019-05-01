@@ -3,11 +3,11 @@ layout: default
 ---
 # Table Of Contents
 * * *
-[Preparing Environment](#prep)
+* [Preparing Environment](#prep)
 
-[Spectre Execution](#spectre)
+* [Spectre Execution](#spectre)
 
-[Meltdown Execution](#meltdown)
+* [Meltdown Execution](#meltdown)
 * * *
 
 <a name="prep"/>
