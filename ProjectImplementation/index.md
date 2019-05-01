@@ -1,54 +1,52 @@
 # Preparing Environment:
 ## Method 1.) Downloading and Using VM Box (latest version optional):
 
-  ### Step 1.) Downloading Ubuntu 16.04.1 LTS (Xenial Xerus) Disk Image
-  <b> 
-  <li> Download <a href='http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso'>Here</a> </li>
-  </b>
+  ### Step 1.) Downloading Ubuntu 16.04.1 LTS (Xenial Xerus) Disk Image ###
   
-  ### Step 2.) Setup VM Box and Mount/Install the Ubuntu Disk And Start VM
-  <b>
-  <li>Additional Resource To Help Install:<a href='https://itsfoss.com/install-linux-in-virtualbox/'> Here</a></li>
-  </b>
+  <b><li> Download <a href='http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso'>Here</a></li></b>
   
-  ### Step 3.) Open Terminal and Enter The Commands Below:
-  <b>
-     <li>sudo apt-get install build-essential</li>
-     <li>sudo apt-get install scons</li>
-     <li>sudo apt-get install python-dev</li>
-     <li>sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev</li>
-     <li>sudo apt-get install automake</li>
-  </b>
+  ### Step 2.) Setup VM Box and Mount/Install the Ubuntu Disk And Start VM ###
+  
+  <b><li>Additional Resource To Help Install:<a href='https://itsfoss.com/install-linux-in-virtualbox/'> Here</a></li></b>
+  
+  ### Step 3.) Open Terminal and Enter The Commands Below: ###
+  
+     * sudo apt-get install build-essential
+     
+     * sudo apt-get install scons
+     
+     * sudo apt-get install python-dev
+     
+     * sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
+     
+     * sudo apt-get install automake
+     
   You can also try this method too:
-  <b>
-     <li>sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python</li>
- </b>
+  * sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
  
  <h4 color ='red'>If you have any trouble running or executing the gem5 look here for troubleshooting the libraries you may need
  <a href='http://learning.gem5.org/book/part1/building.html#requirements-for-gem5'>here</a></h4>
  
- ### Step 4.) Download the source/implementation tar file 
+ ### Step 4.) Download the source/implementation tar file ###
  
  Download <a href=''>here</a>
- <b>
- <li>Extract the tar file:  tar -zxvf project_implementation.tar.gz</li>
- </b>
+ <b><li>Extract the tar file:  tar -zxvf project_implementation.tar.gz</li></b>
   
  <h4 color ='red'>Note make sure you have access to su or sudo on your machine some executions may need root privileges.</h4>
 
 ## Method 2.) Using Hydra Environment:
 
-  ### Step 1.) Log On to Hydra
+  ### Step 1.) Log On to Hydra ###
   
-  ### Step 2.) Use WinSCP To Upload The Source File To Your Directory When Logged On To Hydra
+  ### Step 2.) Use WinSCP To Upload The Source File To Your Directory When Logged On To Hydra ###
   
-  ### Step 3.) Use tar -zxvf project_implementation.tar.gz
+  ### Step 3.) Use tar -zxvf project_implementation.tar.gz ###
   
-  ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits
+  ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits ###
 
-## Executing Spectre: 
+## Executing Spectre: ##
 
-### First run the command below this important for step 2
+### First run the command below this important for step 2 ###
 
 1.) run command: build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre
 
@@ -63,9 +61,11 @@ Notice 113568969000 is an example it could be different tick, but we will use th
 Please note this "tick" will be used for us to hook the debugger into our gem5 process.
 </h4>
 
-2.) <h4 color ='red'>WARNING: This will run slow and will write a file to the current path you execute this on.</h4>
+<h4 color ='red'>
+WARNING: This will run slow and will write a file to the current path you execute this on.
+</h4>
 
-Before running the command, make sure to stop at the first 2 or 3 letters the file can grow very fast be careful with this debugger.
+2.) Before running the command, make sure to stop at the first 2 or 3 letters the file can grow very fast be careful with this debugger.
 
 run command: <b>-build/X86/gem5.opt --debug-flags=O3PipeView --debug-file=pipeview.txt --debug-start=13062347000 configs/learning_gem5/part1/two_level.py spectre
 
@@ -79,4 +79,4 @@ We will color code the states in our pipeline using ASCII text</h4>
 
 Once this is completed we will now use this command to see our pipeline: <b>less -r o3-pipeview.out</b>
 
-## Executing Meltdown:
+### Executing Meltdown: ###
