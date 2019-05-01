@@ -1,7 +1,11 @@
+---
+layout: default
+---
+
 # Preparing Environment: #
 ## Method 1.) Downloading and Using VM Box (latest version optional): ##
 
-<h2 color ='red'>Note make sure you have access to su or sudo on your machine some executions may need root privileges.</h2>
+> Note make sure you have access to su or sudo on your machine some executions may need root privileges.
 
 ### Step 1.) Downloading Ubuntu 16.04.1 LTS (Xenial Xerus) Disk Image ###
   
@@ -15,6 +19,7 @@
   
 ### Step 3.) Open Terminal and Enter The Commands Below: ###
   
+     ```
      sudo apt-get install build-essential
      
      sudo apt-get install scons
@@ -24,9 +29,10 @@
      sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
      
      sudo apt-get install automake
+     ```
      
   You can also try this method too:
-  * sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
+  * `sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python`
  
  <h4 color ='red'>If you have any trouble running or executing the gem5 look here for troubleshooting the libraries you may need to look <a href='http://learning.gem5.org/book/part1/building.html#requirements-for-gem5'>here</a></h4>
  
@@ -35,7 +41,7 @@
  
 Download <a href=''>here</a>
  
-* Extract the tar file:  tar -zxvf project_implementation.tar.gz
+* Extract the tar file:  `tar -zxvf project_implementation.tar.gz`
   
 
 ## Method 2.) Using Hydra Environment: ##
@@ -48,7 +54,7 @@ Download <a href=''>here</a>
   
   
 ### Step 3.) Unzip The Tar ###
-* tar -xJf project_implementation.tar.xz
+* `tar -xJf project_implementation.tar.xz`
   
   
 ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits ###
@@ -60,23 +66,18 @@ Download <a href=''>here</a>
 
 1.) 
 
-* run command: build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre
+* run command: `build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre`
 
-<h3 color ='red'> 
-For normal spectre execution. After the first 2 or 5 letters that pop on screen, use ctrl+c to stop the process. Once the process stops notice at the bottom it should state the following: 
 
-<b>
-Exiting @ tick 113568969000 because exiting with last active thread context 
+> For normal spectre execution. After the first 2 or 5 letters that pop on screen, use ctrl+c to stop the process. Once the process stops notice at the bottom it should state the following: 
+>
+> Exiting @ tick 113568969000 because exiting with last active thread context 
 Notice 113568969000 is an example it could be different tick, but we will use this in our example.
-  
-</b>
+>
+> Please note this "tick" will be used for us to hook the debugger into our gem5 process.
+> 
+> WARNING: This will run slow and will write a file to the current path you execute this on.
 
-Please note this "tick" will be used for us to hook the debugger into our gem5 process.
-</h3>
-
-<h3 color ='red'>
-WARNING: This will run slow and will write a file to the current path you execute this on.
-</h3>
 
 2.) 
 
@@ -87,14 +88,14 @@ Before running the command, make sure to stop at the first 2 or 3 letters the fi
 * Then use CTRL + C to stop after the first 2 or 3 letters
 
 3.) 
-<h3 color ='red'>Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using a utility provided by gem5 to "beautify" the text for us.
+> Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using > a utility provided by gem5 to "beautify" the text for us.
+> 
+> We will color code the states in our pipeline using ASCII text
 
-We will color code the states in our pipeline using ASCII text
-</h3>
 
-* run command: util/o3-pipeview.py --store_completions m5out/pipeview.txt --color -w 150
+* run command: `util/o3-pipeview.py --store_completions m5out/pipeview.txt --color -w 150`
 
 Once this is completed we will now use this command to see our pipeline: 
-* less -r o3-pipeview.out
+* `less -r o3-pipeview.out`
 
 ## Executing Meltdown: ##
