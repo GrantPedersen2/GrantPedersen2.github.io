@@ -3,15 +3,11 @@
 
 ### Step 1.) Downloading Ubuntu 16.04.1 LTS (Xenial Xerus) Disk Image ###
   
-<b>
-  <li>Download <a href='http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso'>Here</a></li>
-</b>
-  
+* Download <a href='http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso'>Here</a>
+
 ### Step 2.) Setup VM Box and Mount/Install the Ubuntu Disk And Start VM ###
-  
-<b>
-  <li>Additional Resource To Help Install:<a href='https://itsfoss.com/install-linux-in-virtualbox/'> Here</a></li>
-</b>
+
+* Additional Resource To Help Install: <a href='https://itsfoss.com/install-linux-in-virtualbox/'>Here</a>
   
 ### Step 3.) Open Terminal and Enter The Commands Below: ###
   
@@ -32,13 +28,11 @@
  
 ### Step 4.) Download the source/implementation tar file ###
  
- Download <a href=''>here</a>
+Download <a href=''>here</a>
  
-<b>
-  <li>Extract the tar file:  tar -zxvf project_implementation.tar.gz</li>
-</b>
+* Extract the tar file:  tar -zxvf project_implementation.tar.gz
   
- <h2 color ='red'>Note make sure you have access to su or sudo on your machine some executions may need root privileges.</h2>
+<h2 color ='red'>Note make sure you have access to su or sudo on your machine some executions may need root privileges.</h2>
 
 ## Method 2.) Using Hydra Environment: ##
 
@@ -46,7 +40,8 @@
   
 ### Step 2.) Use WinSCP To Upload The Source File To Your Directory When Logged On To Hydra ###
   
-### Step 3.) Use tar -zxvf project_implementation.tar.gz ###
+### Step 3.) Unzip The Tar ###
+* tar -zxvf project_implementation.tar.gz
   
 ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How to Execute Both Exploits ###
 
@@ -80,7 +75,8 @@ WARNING: This will run slow and will write a file to the current path you execut
 
 * Then use CTRL + C to stop after the first 2 or 3 letters
 
-3.) <h3 color ='red'>Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using a utility provided by gem5 to "beautify" the text for us.
+
+<h3 color ='red'>3.) Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using a utility provided by gem5 to "beautify" the text for us.
 
 We will color code the states in our pipeline using ASCII text
 </h3>
