@@ -8,7 +8,11 @@ layout: default
 
 * [Spectre Execution](#spectre)
 
+* [Spectre Execution Hydra](#spectreHydra)
+
 * [Meltdown Execution](#meltdown)
+
+* [Meltdown Execution Hydra](#meltdownHydra)
 
 * * *
 
@@ -76,7 +80,7 @@ Download <a href=''>here</a>
 
 <a name='spectre'>
 
-# Executing Spectre:
+# Executing Spectre (VM Box):
 
 ### Run this command below first, this is important for step 2!! ###
 
@@ -116,9 +120,17 @@ Once this is completed we will now use this command to see our pipeline:
 
 * * *
 
+<a name="spectreHydra"/>
+
+# Executing Spectre (Hydra):
+
+1.)
+
+* * *
+
 <a name='meltdown'/>
 
-# Executing Meltdown:
+# Executing Meltdown (VM Box):
 
 1.)
 We need to startup our Bare Metal VM to run our 64 bit vanilla kernel and OS using this command here:
@@ -147,3 +159,9 @@ Should Now See this
 Then use the `clear` and `ls` to see this below:
 
 ![Results4](https://raw.githubusercontent.com/GrantPedersen2/GrantPedersen2.github.io/master/ProjectImplementation/Result4.PNG)
+
+* * *
+
+<a name='meltdownHydra'/>
+
+# Executing Meltdown (Hydra)
