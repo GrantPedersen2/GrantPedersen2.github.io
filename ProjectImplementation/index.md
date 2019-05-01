@@ -144,6 +144,7 @@ Should look something like this below:
 Now that our VM is running we need to attach a built-in simulated terminal to attach to a TCP port `localhost 3456`
 Use the command here:
 * First open a new terminal using `ctrl+alt+t`
+
 * `gem5/util/term/m5term localhost 3456`
 
 Should look something like this below:
