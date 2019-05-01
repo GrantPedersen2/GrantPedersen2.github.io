@@ -162,6 +162,8 @@ Then use the `clear` and `ls` to see this below:
 
 ![Results4](https://raw.githubusercontent.com/GrantPedersen2/GrantPedersen2.github.io/master/ProjectImplementation/Result4.PNG)
 
+### If you want to exit the VM use `m5 exit`
+
 * * *
 
 <a name='meltdownHydra'/>
