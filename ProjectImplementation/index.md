@@ -58,7 +58,7 @@ layout: default
  <h4 color ='red'>If you have any trouble running or executing the gem5 look here for troubleshooting the libraries you may need to look <a href='http://learning.gem5.org/book/part1/building.html#requirements-for-gem5'>here</a></h4>
  
  
-### Step 4.) Download the source/implementation tar file ###
+### Step 4.) Download the source/implementation zip files ###
  
 
 Download gem5 and Spectre Source <a href='https://drive.google.com/open?id=1vMsiGH6DTECydV-p1GsLD_02lr0uW26V'>here</a>
