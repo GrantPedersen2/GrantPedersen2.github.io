@@ -5,10 +5,9 @@ layout: default
 * * *
 
 ## Please note that Full VM gem5 is not supportive of our meltdown script,
-## Since the OS is missing a couple of important kernel files and is missing some
-## commands needed to run our scripts e.g. sudo so you will need to run it on 
+## Since the OS is missing a couple of important kernel files and is missing some commands needed to run our scripts e.g. sudo so you will need to run it on 
 
-## VM Box or another virtual mahcine locally sorry for the inconvience!
+## VM Box or another virtual mahcine locally sorry for the inconvenience!
 
 * [Preparing Environment](#prep)
 
@@ -78,7 +77,7 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
   
   
 ### Step 3.) Extract The Tar ###
-* `tar -xJf project_implementation.tar.xz`
+* Extract the zip files:  `unzip gem5.zip` and `unzip meltdown_source.zip`
   
   
 ### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How To Execute Both Exploits ###
