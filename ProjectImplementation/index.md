@@ -4,6 +4,12 @@ layout: default
 # Table Of Contents
 * * *
 
+## Please note that Full VM gem5 is not supportive of our meltdown script,
+## Since the OS is missing a couple of important kernel files and is missing some
+## commands needed to run our scripts e.g. sudo so you will need to run it on 
+
+## VM Box or another virtual mahcine locally sorry for the inconvience!
+
 * [Preparing Environment](#prep)
 
 * [Spectre Execution](#spectre)
@@ -11,8 +17,6 @@ layout: default
 * [Spectre Execution Hydra](#spectreHydra)
 
 * [Meltdown Execution](#meltdown)
-
-* [Meltdown Execution Hydra](#meltdownHydra)
 
 * * *
 
@@ -55,10 +59,13 @@ layout: default
  
 ### Step 4.) Download the source/implementation tar file ###
  
-Download <a href=''>here</a>
+
+Download gem5 and Spectre Source <a href='https://drive.google.com/open?id=1vMsiGH6DTECydV-p1GsLD_02lr0uW26V'>here</a>
+
+Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrnMsg1sK3QLRS0hH_00Rnw'>here</a>
  
-* Extract the tar file:  `tar -zxvf project_implementation.tar.gz`
-  
+* Extract the zip files:  `unzip gem5.zip` and `unzip meltdown_source.zip`
+
 * * *
 
 ## Method 2.) Using Hydra Environment: ##
@@ -125,7 +132,12 @@ Once this is completed we will now use this command to see our pipeline:
 # Executing Spectre (Hydra):
 
 1.)
-
+  Once your files are prepared you need to execute the command on a compute node
+  
+  Similar to our labs run this command:
+  
+  * `bpsh nodeNumber ./gem5/build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre`
+  
 * * *
 
 <a name='meltdown'/>
@@ -133,39 +145,12 @@ Once this is completed we will now use this command to see our pipeline:
 # Executing Meltdown (VM Box):
 
 1.)
-We need to startup our Bare Metal VM to run our 64 bit vanilla kernel and OS using this command here:
+Unzip the meltdown_source.zip and cd into meltdown-exploit-master
 
-* `build/X86/gem5.opt configs/example/fs.py --kernel ~/gem5/x86-system/binaries/x86_64-vmlinux-2.6.22.9.smp --disk-image ~/gem5/x86-system/disks/linux-x86.img`
+> Note that the meltdown source files are already made just need to execute the run.sh script
 
-Should look something like this below:
-![Results](https://raw.githubusercontent.com/GrantPedersen2/GrantPedersen2.github.io/master/ProjectImplementation/Result.PNG)
+2.)
+Run the run.sh script using `./run.sh` and wait for the results.
 
-2.) 
-Now that our VM is running we need to attach a built-in simulated terminal to attach to a TCP port `localhost 3456`
-Use the command here:
-* First open a new terminal using `ctrl+alt+t`
-
-* `gem5/util/term/m5term localhost 3456`
-
-Should look something like this below:
-![Results2](https://raw.githubusercontent.com/GrantPedersen2/GrantPedersen2.github.io/master/ProjectImplementation/Result2.PNG)
-
-3.) 
-Now We Wait For `2 Years` **:)** 
-
-4.) 
-Should Now See this
-
-![Results3](https://raw.githubusercontent.com/GrantPedersen2/GrantPedersen2.github.io/master/ProjectImplementation/Result3.PNG)
-
-Then use the `clear` and `ls` to see this below:
-
-![Results4](https://raw.githubusercontent.com/GrantPedersen2/GrantPedersen2.github.io/master/ProjectImplementation/Result4.PNG)
-
-### If you want to exit the VM use `m5 exit`
 
 * * *
-
-<a name='meltdownHydra'/>
-
-# Executing Meltdown (Hydra)
