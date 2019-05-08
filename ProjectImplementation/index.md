@@ -4,11 +4,9 @@ layout: default
 # Table Of Contents
 * * *
 
-## Please note that Full VM gem5 is not supportive of our meltdown script,
-## Since the OS is missing a couple of important kernel files and is missing some commands needed to run our scripts e.g. sudo so you will need to run it on 
-## Also note that hydra will not work since python is not available on the machine.
-
-## VM Box or another virtual mahcine locally sorry for the inconvenience!
+> Please note that Full VM gem5 is not supportive of our meltdown script,
+> Since the OS is missing a couple of important kernel files and is missing some commands needed to run our scripts e.g. sudo so you will need to run it on Virtual Box or another virtual mahcine locally sorry for the inconvenience!
+> Also note that hydra will not work since python is not available on the machine.
 
 * [Documentation/Report](https://drive.google.com/open?id=19F1XbiE_Z_MI4YXEhWBpS5tq4TgiVvsF)
 
