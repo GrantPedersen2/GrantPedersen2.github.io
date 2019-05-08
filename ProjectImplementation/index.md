@@ -138,7 +138,7 @@ Before running the command, make sure to stop at the first 2 or 3 letters the fi
 
 * Then use `CTRL + C` to stop after the first 2 or 3 letters
 
-3.) 
+3.) Proof Of Correctness
 > Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using > a utility provided by gem5 to "beautify" the text for us.
 > 
 > We will color code the states in our pipeline using ASCII text
@@ -199,7 +199,39 @@ Unzip the meltdown_source.zip and cd into meltdown-exploit-master
 2.)
 Run the run.sh script using `./run.sh` and wait for the results.
 
-Proof of correctness: 
-Note use of the kernel flags shows proof of correctness to execute on kernel addresses that in debug
+## Proof Of Correctness:
+
+Remember we are obtaining the string `version` from the private variable static char expected[] = "%s version %s"; which is known in and accessed by the kernel memory.
+
+Note use of the `/proc/kallsyms` shows proof of correctness to execute on kernel addresses that are displayed in the 
+output of our program.  Kernel Symbols are global, represent space in the memory, provides a symbol for the name of the variable and are used as debugging variables that we can utilize for our meltdown.  We couple this program with `/boot/System.map` which is used as a symbol table by the kernel itself in our run.sh.  Both `System.map` and `kallsyms` allows us to debug the kernel variables and print them to stdout and ARE REQUIRED TO RUN THE MELTDOWN PROGRAM.
+
+We then use a "training" system similar to the spectre where we need to account for accuracy in retreiving the kernel addresses in byte form with the help of `kallsyms` and `System.map`; remember we can have access to kallsyms for debugging perpuroses to know exactly what the byte representation and hex value of a particular kernal variable address.
+
+Below is the snippit of code to help score the expected byte return after performing a meltdown attack
+Then we print out that hex address and value to the user and the score of how exact the byte form was expected.
+```
+
+  for (score = 0, i = 0; i < size; i++) {
+		ret = readbyte(fd, addr);
+		if (ret == -1)
+			ret = 0xff;
+		printf("read %lx = %x %c (score=%d/%d)\n",
+		       addr, ret, isprint(ret) ? ret : ' ',
+		       ret != 0xff ? hist[ret] : 0,
+		       CYCLES);
+
+		if (i < sizeof(expected) &&
+		    ret == expected[i])
+			score++;
+
+		addr++;
+	}
+
+	close(fd);
+
+	is_vulnerable = score > min(size, sizeof(expected)) / 2;
+  
+```
 
 * * *
