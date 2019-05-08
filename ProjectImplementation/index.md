@@ -72,7 +72,11 @@ Download the git source of gem5:
 
 * git clone https://gem5.googlesource.com/public/gem5
 
-Download Spectre Source And CPU File <a href='https://drive.google.com/open?id=1vMsiGH6DTECydV-p1GsLD_02lr0uW26V'>here</a>
+Download CPU File <a href='https://drive.google.com/open?id=1XlYqC1fD-D27Y4DHkfmDlDV1BY_WVPPA'>here</a>
+
+Download Spectre Execution <a href='https://drive.google.com/open?id=11w6ncM0T529_sqTKVnOgRlNKg8kyPjnk'>here</a>
+
+Download Spectre Source <a href='https://drive.google.com/open?id=1tVA02jRx1YYNXDcUEZxwLH0TelHVL7G_'>here</a>
 
 Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrnMsg1sK3QLRS0hH_00Rnw'>here</a>
 
