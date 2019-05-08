@@ -76,9 +76,13 @@ Download Spectre Source And CPU File <a href='https://drive.google.com/open?id=1
 
 Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrnMsg1sK3QLRS0hH_00Rnw'>here</a>
 
-* Go to the folder you downloaded your zip files
+* Go to the folder you downloaded your zip files using `cd` or you can use the GUI provided by Ubuntu
 
-* Extract the zip files:  `unzip spectre_source.zip` and `unzip meltdown_source.zip`
+* Extract the zip files:  `unzip spectre_source.zip` and `unzip meltdown_source.zip` or use the GUI
+
+* run command `mv spectre_source/two_level.py /home/your_username/Documents/gem5/configs/learning_gem5/part1/two_level.py`
+
+* run command `mv spectre /home/your_username/Documents/gem5/`
 
 ### Step 5.) Build the X86 ISA For gem5
 
@@ -87,7 +91,7 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 PLEASE NOTE -j takes your number of cores + 1
 E.G. I have 1 core so 1+1 = 2 Cores to run, this is needed!
 
-* The Build: `scons build/X86/gem5.opt -j2`
+* Then Build: `scons build/X86/gem5.opt -j2`
 
 * * *
 
