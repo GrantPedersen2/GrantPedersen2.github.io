@@ -81,6 +81,15 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 
 * Extract the zip files:  `unzip spectre_source.zip` and `unzip meltdown_source.zip`
 
+### Step 5.) Build the X86 ISA For gem5
+
+* First Run: `cd /home/your_username/Documents/gem5`
+
+PLEASE NOTE -j takes your number of cores + 1
+E.G. I have 1 core so 1+1 = 2 Cores to run, this is needed!
+
+* The Build: `scons build/X86/gem5.opt -j2`
+
 * * *
 
 <a name='spectre'>
