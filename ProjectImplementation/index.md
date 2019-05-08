@@ -8,7 +8,7 @@ layout: default
 > Since the OS is missing a couple of important kernel files and is missing some commands needed to run our scripts e.g. sudo so you will need to run it on Virtual Box or another virtual mahcine locally sorry for the inconvenience!
 > Also note that hydra will not work since python is not available on the machine.
 
-* [Documentation/Report](https://drive.google.com/open?id=19F1XbiE_Z_MI4YXEhWBpS5tq4TgiVvsF)
+* [Documentation/Report At End Of Report Shows Proof Of Correctness](https://drive.google.com/open?id=19F1XbiE_Z_MI4YXEhWBpS5tq4TgiVvsF) 
 
 * [Preparing Environment](#prep)
 
@@ -148,6 +148,45 @@ Before running the command, make sure to stop at the first 2 or 3 letters the fi
 Once this is completed we will now use this command to see our pipeline: 
 * `less -r o3-pipeview.out`
 
+You can check the pipeline for correctness of Spectre
+First look at the assembly version of our spectre when compiled:
+
+```
+
+# NOTE: the movzbl below is MOVZX_B_R_M in gem5.
+# it is implemented with the following microcode.
+#    ld t1, seg, sib, disp, dataSize=1
+#    zexti reg, t1, 7
+#
+000000000040105e <victim_function>:
+  40105e:   55                      push   %rbp
+  40105f:   48 89 e5                mov    %rsp,%rbp
+  401062:   48 89 7d f8             mov    %rdi,-0x8(%rbp)
+  401066:   8b 05 14 f0 2b 00       mov    0x2bf014(%rip),%eax # 6c0080 <array1_size> load array1_size (first time is always a miss)
+  40106c:   89 c0                   mov    %eax,%eax
+  40106e:   48 3b 45 f8             cmp    -0x8(%rbp),%rax  # if (x < array1_size) rax is array1_size, -8(%rbp) is x
+  401072:   76 2b                   jbe    40109f <victim_function+0x41> # if (x < array1_size)
+  401074:   48 8b 45 f8             mov    -0x8(%rbp),%rax # load x from the stack into rax
+  401078:   48 05 a0 00 6c 00       add    $0x6c00a0,%rax  # calculate array1 offset (x+array1)
+  40107e:   0f b6 00                movzbl (%rax),%eax # load array1[x]
+  401081:   0f b6 c0                movzbl %al,%eax    # zero extend to 32 bits
+  401084:   c1 e0 09                shl    $0x9,%eax   # multiply by 512
+  401087:   48 98                   cltq               # sign-extend eax
+  401089:   0f b6 90 80 1d 6c 00    movzbl 0x6c1d80(%rax),%edx  # load array2[array1[x]*512] **** This is the magic!
+  401090:   0f b6 05 e9 0c 2e 00    movzbl 0x2e0ce9(%rip),%eax        # 6e1d80 <temp> Load temp.
+  401097:   21 d0                   and    %edx,%eax
+  401099:   88 05 e1 0c 2e 00       mov    %al,0x2e0ce1(%rip)        # 6e1d80 <temp>
+  40109f:   5d                      pop    %rbp
+  4010a0:   c3                      retq
+  
+```
+
+> we want to find a time where the `movzbl` at address `0x401089` is executed speculatively and to see the time where the load completes for the instruction at 0x401089
+
+> From the generated image, the instruction at 0x401066 causes a cache miss (there is a long time between when the load is issued and the data is returned from memory). Since the load of array1_size was a cache miss, the jump at 0x401072 is speculated to be not taken (incorrectly). This causes the following instructions to be executed speculatively, eventually squashed in the pipeline.
+
+> The key thing in this trace that is the Spectre vulnerability is that the load for the instruction at 0x40107e, which loads secret data happens during the mis-speculated instructions. Then, the data is loaded into the registers and operated on instruction 0x401084. Finally, the load at address 0x401089 is executed and loads the value from memory that is dependent on the secret data loaded previously. Thus, we can later probe the cache to retrieve the secret data.
+
 <a name='meltdown'/>
 
 # Executing Meltdown (VM Box):
@@ -160,5 +199,7 @@ Unzip the meltdown_source.zip and cd into meltdown-exploit-master
 2.)
 Run the run.sh script using `./run.sh` and wait for the results.
 
+Proof of correctness: 
+Note use of the kernel flags shows proof of correctness to execute on kernel addresses that in debug
 
 * * *
