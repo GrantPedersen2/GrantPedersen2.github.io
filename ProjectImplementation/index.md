@@ -68,9 +68,9 @@ layout: default
 
 Download the git source of gem5:
 
-* cd /home/your_username/Documents/
+* `cd /home/your_username/Documents/`
 
-* git clone https://gem5.googlesource.com/public/gem5
+* `git clone https://gem5.googlesource.com/public/gem5`
 
 Download CPU File <a href='https://drive.google.com/open?id=1XlYqC1fD-D27Y4DHkfmDlDV1BY_WVPPA'>here</a>
 
