@@ -91,7 +91,7 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 
 * Go to the folder you downloaded your zip files using `cd` or you can use the GUI provided by Ubuntu
 
-* Extract the zip files: `unzip spectre_source.zip` and `unzip meltdown_source.zip` or use the GUI
+* Extract the zip meltdown file: `unzip meltdown_source.zip` or use the GUI
 
 * run command `mv /home/your_username/Downloads/two_level.py /home/your_username/Documents/gem5/configs/learning_gem5/part1/two_level.py`
 
@@ -101,8 +101,7 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 
 * First Run: `cd /home/your_username/Documents/gem5`
 
-PLEASE NOTE -j takes your number of cores + 1
-E.G. I have 1 core so 1+1 = 2 Cores to run, this is needed!
+> PLEASE NOTE -j takes your number of cores + 1 E.G. I have 1 core so 1+1 = 2 Cores to run, this is needed!
 
 * Then Build: `scons build/X86/gem5.opt -j2`
 
@@ -199,7 +198,7 @@ Unzip the meltdown_source.zip and cd into meltdown-exploit-master
 2.)
 Run the run.sh script using `./run.sh` and wait for the results.
 
-## Proof Of Correctness:
+## Proof Of Correctness Of Meltdown:
 
 Remember we are obtaining the string `version` from the private variable static char expected[] = "%s version %s"; which is known in and accessed by the kernel memory.
 
