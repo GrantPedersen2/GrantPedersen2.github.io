@@ -33,7 +33,8 @@ layout: default
 ### Step 2.) Setup Virtual Box and Mount/Install the Ubuntu Disk And Start VM ###
 
 * Additional Resource To Help Install: <a href='https://itsfoss.com/install-linux-in-virtualbox/'>Here</a>
-  
+
+* NOTE YOU MUST HAVE AT LEAST 20 - 25 GB OF MEMORY FOR YOUR HARD DRIVE!!!
   
 ### Step 3.) Open Terminal and Enter The Commands Below: ###
 
