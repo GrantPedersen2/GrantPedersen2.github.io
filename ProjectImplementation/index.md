@@ -23,7 +23,7 @@ layout: default
 <a name="prep"/>
 
 # Preparing Environment: #
-## Method 1.) Downloading and Using VM Box (latest version optional): ##
+## Method 1.) Downloading and Using Virtual Box (latest version optional): ##
 
 > Note make sure you have access to su or sudo on your machine some executions may need root privileges.
 
@@ -32,7 +32,7 @@ layout: default
 * Download <a href='http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso'>Here</a>
 
 
-### Step 2.) Setup VM Box and Mount/Install the Ubuntu Disk And Start VM ###
+### Step 2.) Setup Virtual Box and Mount/Install the Ubuntu Disk And Start VM ###
 
 * Additional Resource To Help Install: <a href='https://itsfoss.com/install-linux-in-virtualbox/'>Here</a>
   
@@ -63,7 +63,9 @@ layout: default
 Download gem5 and Spectre Source <a href='https://drive.google.com/open?id=1vMsiGH6DTECydV-p1GsLD_02lr0uW26V'>here</a>
 
 Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrnMsg1sK3QLRS0hH_00Rnw'>here</a>
- 
+
+* Go to the folder you downloaded your zip files
+
 * Extract the zip files:  `unzip gem5.zip` and `unzip meltdown_source.zip`
 
 * * *
@@ -76,7 +78,7 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 
 1.) 
 * cd gem5
-* run command: `build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre`
+* run command: `./build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre`
 
 
 > For normal spectre execution. After the first 2 or 5 letters that pop on screen, use ctrl+c to stop the process. Once the process stops notice at the bottom it should state the following: 
@@ -93,7 +95,7 @@ Notice 113568969000 is an example it could be different tick, but we will use th
 
 Before running the command, make sure to stop at the first 2 or 3 letters the file can grow very fast be careful with this debugger.
 
-* run command: `-build/X86/gem5.opt --debug-flags=O3PipeView --debug-file=pipeview.txt --debug-start=13062347000 configs/learning_gem5/part1/two_level.py spectre`
+* run command: `./build/X86/gem5.opt --debug-flags=O3PipeView --debug-file=pipeview.txt --debug-start=13062347000 configs/learning_gem5/part1/two_level.py spectre`
 
 * Then use `CTRL + C` to stop after the first 2 or 3 letters
 
