@@ -10,7 +10,9 @@ layout: default
 
 * [Documentation/Report At End Of Report Shows Proof Of Correctness](https://drive.google.com/open?id=1gilazq0qpxEIU9yW2oSrQUCms4Bnbl6_) 
 
-* [Preparing Environment](#prep)
+* [Division Of Work](https://drive.google.com/open?id=1Zt89XFoPVbd2J38A_90uc4xB5CdphaMFYF_0nlcCTKQ)
+
+* [Preparing Environment - Step 4 Has All Source Files](#prep)
 
 * [Spectre Execution](#spectre)
 
