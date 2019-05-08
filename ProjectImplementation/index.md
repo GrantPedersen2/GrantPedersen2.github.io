@@ -40,6 +40,8 @@ layout: default
 ### Step 3.) Open Terminal and Enter The Commands Below: ###
 
 ```
+     sudo apt-get install git
+     
      sudo apt-get install build-essential
      
      sudo apt-get install scons
@@ -49,24 +51,35 @@ layout: default
      sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
      
      sudo apt-get install automake
+     
+     sudo apt-get install libboost-all-dev
+     
+     sudo apt-get install pip
+     
+     sudo pip install six
 ```
      
-  You can also try this method too:
+  You also need to run this method as well:
   * `sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python`
  
  <h4 color ='red'>If you have any trouble running or executing the gem5 look here for troubleshooting the libraries you may need to look <a href='http://learning.gem5.org/book/part1/building.html#requirements-for-gem5'>here</a></h4>
  
  
 ### Step 4.) Download the source/implementation zip files ###
- 
 
-Download gem5 and Spectre Source <a href='https://drive.google.com/open?id=1vMsiGH6DTECydV-p1GsLD_02lr0uW26V'>here</a>
+Download the git source of gem5:
+
+* cd /home/your_username/Documents/
+
+* git clone https://gem5.googlesource.com/public/gem5
+
+Download Spectre Source And CPU File <a href='https://drive.google.com/open?id=1vMsiGH6DTECydV-p1GsLD_02lr0uW26V'>here</a>
 
 Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrnMsg1sK3QLRS0hH_00Rnw'>here</a>
 
 * Go to the folder you downloaded your zip files
 
-* Extract the zip files:  `unzip gem5.zip` and `unzip meltdown_source.zip`
+* Extract the zip files:  `unzip spectre_source.zip` and `unzip meltdown_source.zip`
 
 * * *
 
@@ -77,7 +90,8 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 ### Run this command below first, this is important for step 2!! ###
 
 1.) 
-* cd gem5
+* run command: `cd /home/your_username/Documents/gem5`
+
 * run command: `./build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre`
 
 
@@ -88,7 +102,7 @@ Notice 113568969000 is an example it could be different tick, but we will use th
 >
 > Please note this "tick" will be used for us to hook the debugger into our gem5 process.
 > 
-> WARNING: This will run slow and will write a file to the current path you execute this on.
+> WARNING: This will run slow and will write a debug file to the current path you execute this on.
 
 
 2.) 
