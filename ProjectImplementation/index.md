@@ -39,6 +39,8 @@ layout: default
 ### Step 3.) Open Terminal and Enter The Commands Below: ###
 
 ```
+     sudo apt-get update
+     
      sudo apt-get install git
      
      sudo apt-get install build-essential
@@ -53,7 +55,7 @@ layout: default
      
      sudo apt-get install libboost-all-dev
      
-     sudo apt-get install pip
+     sudo apt-get install pip (if this does not work try): sudo apt-get install python-pip
      
      sudo pip install six
 ```
@@ -61,7 +63,12 @@ layout: default
   You also need to run this method as well:
   * `sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python`
  
+ In a last ditch effort if it is not working try this command below and rerun all commands above:
+ * `sudo apt-get upgrade libprotobuf-dev`
+ 
  <h4 color ='red'>If you have any trouble running or executing the gem5 look here for troubleshooting the libraries you may need to look <a href='http://learning.gem5.org/book/part1/building.html#requirements-for-gem5'>here</a></h4>
+ 
+ You can also see this for your PIP issue: <a href='https://askubuntu.com/questions/672808/sudo-apt-get-install-python-pip-is-failing'> here</a>
  
  
 ### Step 4.) Download the source/implementation zip files ###
@@ -71,6 +78,8 @@ Download the git source of gem5:
 * `cd /home/your_username/Documents/`
 
 * `git clone https://gem5.googlesource.com/public/gem5`
+
+Now open the FireFox Browser in your Ubuntu and use the links below
 
 Download CPU File <a href='https://drive.google.com/open?id=1XlYqC1fD-D27Y4DHkfmDlDV1BY_WVPPA'>here</a>
 
@@ -82,11 +91,11 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 
 * Go to the folder you downloaded your zip files using `cd` or you can use the GUI provided by Ubuntu
 
-* Extract the zip files:  `unzip spectre_source.zip` and `unzip meltdown_source.zip` or use the GUI
+* Extract the zip files: `unzip spectre_source.zip` and `unzip meltdown_source.zip` or use the GUI
 
-* run command `mv spectre_source/two_level.py /home/your_username/Documents/gem5/configs/learning_gem5/part1/two_level.py`
+* run command `mv /home/your_username/Downloads/two_level.py /home/your_username/Documents/gem5/configs/learning_gem5/part1/two_level.py`
 
-* run command `mv spectre /home/your_username/Documents/gem5/`
+* run command `mv /home/your_username/Downloads/spectre /home/your_username/Documents/gem5/`
 
 ### Step 5.) Build the X86 ISA For gem5
 
@@ -133,7 +142,6 @@ Before running the command, make sure to stop at the first 2 or 3 letters the fi
 > Notice in your current directory there is a file called pipeview.txt DO NOT CAT THIS FILE we will need to review this file using > a utility provided by gem5 to "beautify" the text for us.
 > 
 > We will color code the states in our pipeline using ASCII text
-
 
 * run command: `util/o3-pipeview.py --store_completions m5out/pipeview.txt --color -w 150`
 
