@@ -6,6 +6,7 @@ layout: default
 
 ## Please note that Full VM gem5 is not supportive of our meltdown script,
 ## Since the OS is missing a couple of important kernel files and is missing some commands needed to run our scripts e.g. sudo so you will need to run it on 
+## Also note that hydra will not work since python is not available on the machine.
 
 ## VM Box or another virtual mahcine locally sorry for the inconvenience!
 
@@ -14,8 +15,6 @@ layout: default
 * [Preparing Environment](#prep)
 
 * [Spectre Execution](#spectre)
-
-* [Spectre Execution Hydra](#spectreHydra)
 
 * [Meltdown Execution](#meltdown)
 
@@ -69,23 +68,6 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 
 * * *
 
-## Method 2.) Using Hydra Environment: ##
-
-
-### Step 1.) Log On to Hydra ###
-  
-  
-### Step 2.) Use `WinSCP` To Upload The Source File To Your Directory When Logged On To Hydra ###
-  
-  
-### Step 3.) Extract The Tar ###
-* Extract the zip files:  `unzip gem5.zip` and `unzip meltdown_source.zip`
-  
-  
-### Step 4.) The Source Files Have The Built X86 ISA For You, So Proceed Below On How To Execute Both Exploits ###
-
-* * *
-
 <a name='spectre'>
 
 # Executing Spectre (VM Box):
@@ -93,7 +75,7 @@ Download Meltdown Source <a href='https://drive.google.com/open?id=1928-VL4fzJrn
 ### Run this command below first, this is important for step 2!! ###
 
 1.) 
-
+* cd gem5
 * run command: `build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre`
 
 
@@ -125,21 +107,6 @@ Before running the command, make sure to stop at the first 2 or 3 letters the fi
 
 Once this is completed we will now use this command to see our pipeline: 
 * `less -r o3-pipeview.out`
-
-* * *
-
-<a name="spectreHydra"/>
-
-# Executing Spectre (Hydra):
-
-1.)
-  Once your files are prepared you need to execute the command on a compute node
-  
-  Similar to our labs run this command:
-  
-  * `bpsh nodeNumber ./gem5/build/X86/gem5.opt configs/learning_gem5/part1/two_level.py spectre`
-  
-* * *
 
 <a name='meltdown'/>
 
