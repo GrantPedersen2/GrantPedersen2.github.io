@@ -1,3 +1,3 @@
-title: Meltdown and Spectre Team 4
-description: How to use gem5 to run Spectre and Meltdown
-theme: jekyll-theme-slate
+name: Grant Pedersen
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
